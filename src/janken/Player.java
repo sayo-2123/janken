@@ -1,12 +1,16 @@
 package janken;
 
-public class player {
+public class Player {
 	public static final int STONE = 0;
-	public static final int SCRISSORS = 1;
+	public static final int SCISSORS = 1;
 	public static final int PAPER = 2;
 
 	private String name;
 	private int winCount = 0;
+
+	public Player(String name) {
+		this.name = name;
+	}
 
 	public int showHand() {
 		double randomNum = 0;
@@ -15,7 +19,7 @@ public class player {
 		if (randomNum < 1) {
 			playerHand = STONE;
 		} else if (randomNum < 2) {
-			playerHand = SCRISSORS;
+			playerHand = SCISSORS;
 		} else {
 			playerHand = PAPER;
 		}
@@ -31,4 +35,8 @@ public class player {
 	public int getWinCount() {
 		return winCount;
 	}
-};
+
+	public String getName() {
+		return name;
+	}
+}
